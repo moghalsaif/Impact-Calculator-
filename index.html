@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Impact Calculator</h1>
+            <a href="https://twitter.com/moghalsaifa" target="_blank" rel="noopener noreferrer" class="built-by">Built by @moghalsaifa</a>
+        </header>
+
+        <main id="home-page">
+            <blockquote>
+                "You don't rise to the level of your dreams. You fall to the level of your systems."
+                <footer>- James Clear</footer>
+            </blockquote>
+            <button id="calculate-btn" class="primary-btn">Calculate Your Output</button>
+            <div class="card">
+                <h2>Why I built this</h2>
+                <p>With notion, You make a to do list to for everyday and track your progress by ticking boxes and feel good that you are consistent, but I believe, Just consistency will not get you anywhere, You have to create output and improve upon the work.</p>
+                <p>Impact calculator help you do that. Here, You set a goal, You write what you did in your work session, and it will calculate how much amount of work you did. This way, you can understand how much actual work you are doing than just looking like you are busy.</p>
+            </div>
+        </main>
+
+        <main id="calculate-page" style="display: none;">
+            <div class="card">
+                <h2>Calculate Your Output</h2>
+                <p>Enter your goal and the work you did during this session.</p>
+                <form id="calculate-form">
+                    <div class="form-group">
+                        <label for="goal">What is your goal?</label>
+                        <textarea id="goal" rows="3" placeholder="Enter your goal"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="work-description">Describe the work you did during this session</label>
+                        <textarea id="work-description" rows="3" placeholder="Describe your work"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="timeframe">Timeframe (e.g., hours, days)</label>
+                        <input type="text" id="timeframe" placeholder="Enter timeframe">
+                    </div>
+                    <div class="button-group">
+                        <button type="button" id="back-btn" class="secondary-btn">Back</button>
+                        <button type="submit" class="primary-btn">Show Me the Real Work</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <main id="results-page" style="display: none;">
+            <div id="percentage" class="percentage">75%</div>
+            <p>of your potential output achieved</p>
+            <div class="divider"></div>
+            <h2>Areas for Improvement</h2>
+            <div class="improvement-areas">
+                <div>
+                    <h3>Time Management</h3>
+                    <ul>
+                        <li>Minimize distractions</li>
+                        <li>Take regular breaks</li>
+                        <li>Prioritize tasks</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Focus</h3>
+                    <ul>
+                        <li>Break down large tasks</li>
+                        <li>Eliminate multitasking</li>
+                        <li>Practice mindfulness</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="button-group">
+                <button id="try-again-btn" class="secondary-btn">Try Again</button>
+                <button id="log-another-btn" class="secondary-btn">Log Another Session</button>
+                <button id="share-btn" class="primary-btn">Share Your Progress</button>
+            </div>
+        </main>
+
+        <footer>
+            © 2024 Impact Calculator
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
