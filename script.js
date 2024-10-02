@@ -28,10 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         const goal = document.getElementById('goal').value;
         const workDescription = document.getElementById('work-description').value;
-        const timeframe = document.getElementById('timeframe').value;
+        const expectedTime = document.getElementById('expected-time').value;
+        const actualTime = document.getElementById('actual-time').value;
 
         try {
-            const result = await calculateOutput({ goal, workDescription, timeframe });
+            const result = await calculateOutput({ goal, workDescription, expectedTime, actualTime });
             percentageElement.textContent = `${result.percentage}%`;
             
             if (result.percentage > 50) {
@@ -62,8 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
             body: JSON.stringify({
                 model: "mixtral-8x7b-32768",
                 messages: [
-                    {role: "system", content: "You are an AI assistant tasked with calculating the productivity percentage based on user input. Consider the user's project goal, amount of work completed, time taken, and the complexity of the task. Compare the actual output to the expected outcome, and factor in the time efficiency. Respond with a single number representing the percentage of productivity achieved, prioritizing accuracy."},
-                    {role: "user", content: `Goal: ${data.goal}\nWork done: ${data.workDescription}\nTimeframe: ${data.timeframe}\n\nBased on this information, calculate the percentage of productivity achieved. Respond with only a number between 0 and 100.`}
+                    {role: "system", content: "You are an AI assistant that calculates productivity based on user input. Respond with a single number representing the percentage of productivity achieved."},
+                    {role: "user", content: `Goal: ${data.goal}\nWork done: ${data.workDescription}\nExpected time: ${data.expectedTime} minutes\nActual time: ${data.actualTime} minutes\n\nBased on this information, calculate the percentage of productivity achieved. Consider the relationship between expected and actual time in your calculation. Respond with only a number between 0 and 100.`}
                 ],
                 temperature: 0.7,
                 max_tokens: 5
