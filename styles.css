@@ -137,34 +137,10 @@ textarea, input[type="text"] {
     color: #1f2937;
 }
 
-.divider {
-    width: 100px;
-    height: 2px;
-    background-color: #d4b895;
-    margin: 20px 0;
-}
-
-.improvement-areas {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 600px;
+.feedback {
+    font-size: 18px;
     margin-top: 20px;
-}
-
-ul {
-    padding-left: 20px;
-    list-style-type: none;
-}
-
-li {
-    margin-bottom: 8px;
-}
-
-li::before {
-    content: '✓';
-    margin-right: 8px;
-    color: #92400e;
+    text-align: center;
 }
 
 footer {
